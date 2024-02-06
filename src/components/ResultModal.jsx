@@ -13,7 +13,7 @@ const ResultModal = forwardRef( function ResultModal({targetTime, remainingTime,
     const score = (targetTime * 1000 - remainingTime)/ 1000;
 
     return (
-        createPortal( <dialog ref={dialog} className="result-modal">
+        createPortal( <dialog ref={dialog} className="result-modal" onClose={onReset}>
                 {won && <h2>You scored: {score}</h2>}
                 {!won && <h2>You lost</h2>}
                 <p>The target time was <strong>{targetTime} second{targetTime > 1 ? 's' : ''}.</strong></p>
